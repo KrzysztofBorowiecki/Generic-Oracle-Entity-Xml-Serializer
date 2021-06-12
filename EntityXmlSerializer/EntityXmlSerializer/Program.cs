@@ -57,6 +57,7 @@ namespace EntityXmlSerializer
                 if (InputParameters.IsImporting)
                 {
                     var importer = serviceProvider.GetService<Importer>();
+                    importer.Invoke();
                 }
             }
             catch (Exception e)

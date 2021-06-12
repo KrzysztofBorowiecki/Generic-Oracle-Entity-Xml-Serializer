@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 #nullable disable
 
-namespace EntityXmlSerializer
+namespace EntityXmlSerializer.Entities
 {
     [XmlType("Department")]
     public partial class Department

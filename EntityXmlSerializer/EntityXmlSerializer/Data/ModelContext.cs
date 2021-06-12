@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityXmlSerializer.Entities;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 

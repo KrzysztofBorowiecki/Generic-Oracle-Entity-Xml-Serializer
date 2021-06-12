@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace EntityXmlSerializer
+namespace EntityXmlSerializer.Entities
 {
     [XmlType("Dependent")]
     public partial class Dependent

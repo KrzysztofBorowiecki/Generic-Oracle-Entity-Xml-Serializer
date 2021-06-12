@@ -51,6 +51,7 @@ namespace EntityXmlSerializer
                 if (InputParameters.IsExporting)
                 {
                     var exporter = serviceProvider.GetService<Exporter>();
+                    exporter.Invoke();
                 }
 
                 if (InputParameters.IsImporting)

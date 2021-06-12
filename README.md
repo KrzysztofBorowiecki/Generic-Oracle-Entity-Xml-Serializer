@@ -37,6 +37,16 @@ Scaffold-DbContext "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TC
 
 All what you have to do is change your address, user id and password.
 
+Then you have to change calls of SerializeXml, DeserializeDataFromXml, UpdateDb methods
+
+Last step is prepare each entity class like in project.
+So you have to add decorators: 
+
+- [XmlType("Country")] (this example is for Country entity)
+- [XmlIgnore] 
+
+and public constructor without parameters 
+
 
 ### Usage:
 

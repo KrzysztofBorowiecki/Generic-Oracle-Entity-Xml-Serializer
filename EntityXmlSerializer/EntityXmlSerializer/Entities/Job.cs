@@ -13,6 +13,7 @@ namespace EntityXmlSerializer.Entities
         public decimal? MinSalary { get; set; }
         public decimal? MaxSalary { get; set; }
 
+        [XmlIgnore]
         public virtual ICollection<Employee> Employees { get; set; }
 
         public Job() { }

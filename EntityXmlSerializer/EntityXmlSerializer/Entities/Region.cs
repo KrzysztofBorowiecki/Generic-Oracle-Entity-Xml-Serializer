@@ -11,6 +11,7 @@ namespace EntityXmlSerializer.Entities
         public decimal RegionId { get; set; }
         public string RegionName { get; set; }
 
+        [XmlIgnore]
         public virtual ICollection<Country> Countries { get; set; }
 
         public Region() { }

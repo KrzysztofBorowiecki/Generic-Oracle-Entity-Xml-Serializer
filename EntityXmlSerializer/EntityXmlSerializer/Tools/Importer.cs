@@ -32,11 +32,11 @@ namespace EntityXmlSerializer.Tools
 
             UpdateDb<Country>(countries, "CountryId");
             UpdateDb<Department>(departments, "DepartmentId");
-            UpdateDb<Dependent>(dependents, "BrandId");
-            UpdateDb<Employee>(employees, "CarmodelId");
-            UpdateDb<Job>(jobs, "ColourId");
-            UpdateDb<Location>(locations, "CountryOfOriginId");
-            UpdateDb<Region>(regions, "FuelId");
+            UpdateDb<Dependent>(dependents, "DependentId");
+            UpdateDb<Employee>(employees, "EmployeeId");
+            UpdateDb<Job>(jobs, "JobId");
+            UpdateDb<Location>(locations, "LocationId");
+            UpdateDb<Region>(regions, "RegionId");
 
             Console.WriteLine("Saving changes to database done");
         }

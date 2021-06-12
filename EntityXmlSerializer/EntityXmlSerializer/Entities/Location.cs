@@ -15,7 +15,9 @@ namespace EntityXmlSerializer.Entities
         public string StateProvince { get; set; }
         public string CountryId { get; set; }
 
+        [XmlIgnore]
         public virtual Country Country { get; set; }
+        [XmlIgnore]
         public virtual ICollection<Department> Departments { get; set; }
 
         public Location() { }

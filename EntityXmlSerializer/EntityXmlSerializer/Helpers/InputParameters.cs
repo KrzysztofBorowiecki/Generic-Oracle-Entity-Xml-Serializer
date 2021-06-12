@@ -21,7 +21,7 @@ namespace EntityXmlSerializer.Helpers
                 e => IsImporting = e != null
             },
             {
-                "d|directory",
+                "d|directory=",
                 "the absolute path to file with `.xml`",
                 file => XmlDirectoryPath = file
             },

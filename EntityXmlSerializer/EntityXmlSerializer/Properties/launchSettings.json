@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EntityXmlSerializer": {
+      "commandName": "Project",
+      "commandLineArgs": "-e -d\"D:\\Serialized\""
+    }
+  }
+}

@@ -1,41 +1,22 @@
 ﻿using System;
 using System.IO;
 using Mono.Options;
+using EntityXmlSerializer.Tools;
+using EntityXmlSerializer.Helpers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EntityXmlSerializer
 {
     class Program
     {
-        private static bool isExporting;
-        private static bool isImporting;
-
-        public static string xmlDirectoryPath { get; private set; }
-
-        private static readonly OptionSet Options = new()
-        {
-            {
-                "e|export",
-                "declares whether the tool should export `.xml`",
-                e => isExporting = e != null
-            },
-            {
-                "i|import",
-                "declares whether the tool should import the `.xml`",
-                e => isImporting = e != null
-            },
-            {
-                "d|directory=",
-                "the absolute path to file with `.xml`",
-                file => xmlDirectoryPath = file
-            },
-        };
         static void Main(string[] args)
         {
             var appName = Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0]);
+            var options = InputParameters.GetOptionSet();
 
             try
             {
-                Options.Parse(args);
+                options.Parse(args);
             }
             catch (OptionException)
             {
@@ -43,28 +24,38 @@ namespace EntityXmlSerializer
                 return;
             }
 
-            if (isExporting && isImporting)
+            var serviceProvider = DependencyCollection.Register();
+            var directoryInfo = Utils.Utils.GetDirectoryInfo(InputParameters.XmlDirectoryPath, appName);
+
+            if (InputParameters.IsExporting && InputParameters.IsImporting)
             {
                 Console.WriteLine($"{appName}: import and export flags cannot be set at the same time.");
                 Utils.Utils.Exit(exitCode: 1);
             }
-
-            if (!isExporting && !isImporting)
+            else if (!InputParameters.IsExporting && !InputParameters.IsImporting)
             {
                 Console.WriteLine($"{appName}: either import or export flag needs to be set.");
                 Utils.Utils.Exit(exitCode: 1);
             }
 
+
+            if (!directoryInfo.Exists)
+            {
+                Console.WriteLine($"{appName}: directory not exists.");
+                Utils.Utils.Exit(exitCode: 1);
+            }
+
+
             try
             {
-                if (isExporting)
+                if (InputParameters.IsExporting)
                 {
-
+                    var exporter = serviceProvider.GetService<Exporter>();
                 }
 
-                if (isImporting)
+                if (InputParameters.IsImporting)
                 {
-
+                    var importer = serviceProvider.GetService<Importer>();
                 }
             }
             catch (Exception e)

@@ -15,8 +15,13 @@ namespace EntityXmlSerializer.Utils
             Environment.Exit(exitCode);
         }
 
-        public static DirectoryInfo GetDirectoryInfo(string path)
+        public static DirectoryInfo GetDirectoryInfo(string path, string appName)
         {
+            if (string.IsNullOrEmpty(path))
+            {
+                Console.WriteLine($"{appName}: directory parametr is null or empty");
+                Exit(exitCode: 1);
+            }
             var dirInfo = new DirectoryInfo(path);
             if (!dirInfo.Exists)
             {

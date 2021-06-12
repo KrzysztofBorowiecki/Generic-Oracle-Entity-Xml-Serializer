@@ -51,7 +51,12 @@ and public constructor without parameters
 
 ### Usage:
 
-
+![alt text](./docs/VisualStudioDebug.jpg "VisualStudioDebug")
+![alt text](./docs/ExportConsoleOutput.jpg "ExportConsoleOutput")
+![alt text](./docs/SerializedFolderAfterExport.jpg "SerializedFolderAfterExport")
+![alt text](./docs/ModifyCountryXmlFile.jpg "ModifyCountryXmlFile")
+![alt text](./docs/ConsoleImportCommand.jpg "ConsoleImportCommand")
+![alt text](./docs/TableAfterImport.jpg "TableAfterImport")
 
 
 <br />

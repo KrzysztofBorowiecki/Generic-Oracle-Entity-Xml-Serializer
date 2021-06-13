@@ -1,10 +1,11 @@
 ## About Project
 
-EntityXmlSerializer is a generic xml serializer/deserializer base on oracle data-bases. With this app you can export data from each table to xml files, then you can change some values in xml and import this changes to your database.
+EntityXmlSerializer is a generic xml serializer/deserializer base on oracle data-bases. With this app you can export data from each table to xml file, then you can change some values in xml file and import this changes to your database.
 
 For this project I scafold/use data-base from https://www.sqltutorial.org/sql-sample-database/.
-> According to the licenses, I use it database for educational purposes.
-I tested also this app in another 3 diffrent data-base and I think it would work with each data-base.
+> According to the licenses, I use this database for educational purposes.
+
+I tested this app also in another 3 diffrent data-bases and I think it would work with each data-base.
 
 <br />
 
@@ -36,7 +37,7 @@ If you want to scafold your data-base use this command:
 
 `Scaffold-DbContext "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.145)(PORT=1522)))(CONNECT_DATA=(SID=orcltp)));User ID=s9999;Password=s9999"    Oracle.EntityFrameworkCore`
 
-All what you have to do is change your address, user id and password.
+All what you have to do is change your address, user Id and password.
 
 Then you have to change calls of SerializeXml, DeserializeDataFromXml, UpdateDb methods
 
@@ -46,17 +47,29 @@ So you have to add decorators:
 - `[XmlType("Country")]` (this example is for Country entity)
 - `[XmlIgnore]` 
 
-and public constructor without parameters 
+and add public constructor without parameters. 
 
 
 ### Usage:
 
-![alt text](./docs/VisualStudioDebug.jpg "VisualStudioDebug")
-![alt text](./docs/ExportConsoleOutput.jpg "ExportConsoleOutput")
-![alt text](./docs/SerializedFolderAfterExport.jpg "SerializedFolderAfterExport")
-![alt text](./docs/ModifyCountryXmlFile.jpg "ModifyCountryXmlFile")
-![alt text](./docs/ConsoleImportCommand.jpg "ConsoleImportCommand")
-![alt text](./docs/TableAfterImport.jpg "TableAfterImport")
+#### You can add parametr / flags into debug section at app properies ####
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/VisualStudioDebug.JPG)
+
+#### Console export output ####
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/ExportConsoleOutput.JPG)
+
+#### Every entity is saved in separate xml file ####
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/SerializedFolderAfterExport.JPG)
+
+#### Lets change Argentina to Poland #### 
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/ModifyCountryXmlFile.JPG)
+
+#### You can use app from console. Now I use import flag below and add changes to data-base ####
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/ConsoleImportCommand.JPG)
+
+#### Data-base after import ####
+![alt text](https://github.com/KrzysztofBorowiecki/Generic-Oracle-Entity-Xml-Serializer/blob/main/Docs/TableAfterImport.JPG)
+
 
 
 <br />

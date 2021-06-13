@@ -2,7 +2,7 @@
 
 EntityXmlSerializer is a generic xml serializer/deserializer base on oracle databases. With this app, you can export data from each table to Xml file, and then you can change some values in Xml file and import these changes to your database.
 
-For this project, I scaffold/use a database from https://www.sqltutorial.org/sql-sample-database/..
+For this project, I scaffold/use a database from https://www.sqltutorial.org/sql-sample-database/.
 > According to the licenses, I use this database for educational purposes.
 
 I tested this app in another three various databases, and I think it would work with each database.
@@ -33,7 +33,9 @@ I tested this app in another three various databases, and I think it would work 
 
 ### Configuration
 
-If you want to scafold your data-base use this command:
+If you want to scafold your data-base use command to generate entities and model context.
+For this it can be useful this side: https://www.connectionstrings.com/oracle/.
+In my case I use this command:
 
 `Scaffold-DbContext "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.145)(PORT=1522)))(CONNECT_DATA=(SID=orcltp)));User ID=s9999;Password=s9999"    Oracle.EntityFrameworkCore`
 

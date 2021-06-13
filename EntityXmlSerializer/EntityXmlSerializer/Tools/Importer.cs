@@ -49,8 +49,8 @@ namespace EntityXmlSerializer.Tools
 
             XmlSerializer serializer = new XmlSerializer(typeof(List<T>), xRoot);
 
-            serializer.UnknownNode += new XmlNodeEventHandler(serializer_UnknownNode);
-            serializer.UnknownAttribute += new XmlAttributeEventHandler(serializer_UnknownAttribute);
+            serializer.UnknownNode += new XmlNodeEventHandler(SerializerUnknownNode);
+            serializer.UnknownAttribute += new XmlAttributeEventHandler(SerializerUnknownAttribute);
 
             List<T> type;
 
@@ -79,16 +79,16 @@ namespace EntityXmlSerializer.Tools
             _context.SaveChanges();
         }
 
-        private void serializer_UnknownNode(object sender, XmlNodeEventArgs e)
+        private void SerializerUnknownNode(object sender, XmlNodeEventArgs e)
         {
-            Console.WriteLine("Unknown Node:" + e.Name + "\t" + e.Text);
+            Console.WriteLine($"Unknown Node: {e.Name}\t{e.Text}");
         }
 
-        private void serializer_UnknownAttribute(object sender, XmlAttributeEventArgs e)
+        private void SerializerUnknownAttribute(object sender, XmlAttributeEventArgs e)
         {
             System.Xml.XmlAttribute attr = e.Attr;
-            Console.WriteLine("Unknown attribute " +
-            attr.Name + "='" + attr.Value + "'");
+            Console.WriteLine($"Unknown attribute {attr.Name} ='{ attr.Value}'");
+
         }
     }
 }
